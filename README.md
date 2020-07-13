@@ -8,8 +8,7 @@ This app will eventually be the main user interface for my raspberry pi bedroom 
 - Is computer on?
 - Is computer booted to windows or linux? (useful to know if I can use Teamviewer to access my computer)
 - button that has the rasp pi play a motivational quote
-- is anyone in the bedroom (arduino ultrasonic sensor tests the height of everyone that walks in)
-- am I in my bedroom (I am unusually tall, if someone around my height walks in becomes true) (state machine?)
+- history of people that walked in or out the door and their height (arduino ultrasonic sensor tests the height of everyone that walks in)
 - play spotify on rasp pi
 - Fan on or off switch
 - Light switch
@@ -23,7 +22,6 @@ This app will eventually be the main user interface for my raspberry pi bedroom 
 
 ### UI Requirements v1
 - front page lists the temperature, humidity, light content, is door open
-- Need to be able to set whether I'm in the room since errors will be common unless a better testing method is determined
 - motivational quote button should also display a quote in case I'm not in my room
 - is computer on indicator
 - windows or linux indicator
@@ -35,7 +33,7 @@ This app will eventually be the main user interface for my raspberry pi bedroom 
 list of tabs:
 - Main(displays temp, humidity, light content, is my room empty, is door open) 
 - mood page (list of moods and buttons that change the mood), 
-- settings(shows if I'm in the room, reset button, disable/enable tracking(for privacy), set myself to in or out of the room)
+- settings(door history such as people that walked in or out the door, reset button, disable/enable tracking(for privacy), )
 - Computer info (shows info about my desktop)
 - Control Panel (lights on/off, fan on/off, computer on/off)
 - Motivational quote page
