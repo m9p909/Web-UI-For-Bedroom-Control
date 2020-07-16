@@ -1,10 +1,14 @@
 import Head from 'next/head'
 import React from 'react';
-import NavBar from '../Components/navBar/navBar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'react-dom';
+
+interface HomeProps {
+  temp:Number;
+  
+}
 export default class Home extends React.Component{
   render(){
     return(
@@ -16,9 +20,9 @@ export default class Home extends React.Component{
     </Head>
     <main>
     <Container>
-    <h1> Control Panel</h1>
+    <h1> Bedroom App</h1>
     <Row>
-      <Col>I like trains</Col>
+      <Col></Col>
     </Row>
     </Container>
     
@@ -27,4 +31,8 @@ export default class Home extends React.Component{
   </div>
     )
   }
+}
+
+export async function getServerSideProps(){
+
 }
