@@ -6,7 +6,7 @@ import NavButton from "./NavButton";
 export default class NavBar extends React.Component {
   render(): JSX.Element {
     return (
-      <Navbar collapseOnSelect bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Link href="/">
           <a className="navbar-brand navbar-dark">Bed Control</a>
         </Link>
