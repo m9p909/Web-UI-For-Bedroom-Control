@@ -1,12 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from '../Components/navBar/navBar';
-import {AppProps} from 'next/app';
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "../Components/navBar/NavBar";
+import { AppProps } from "next/app";
+import React from "react";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
-    <NavBar></NavBar>
-  <Component {...pageProps} />
-  </>
-  )
+      <NavBar></NavBar>
+      <Component {...pageProps} />
+    </>
+  );
 }
