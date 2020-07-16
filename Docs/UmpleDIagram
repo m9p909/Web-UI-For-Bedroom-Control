@@ -1,0 +1,17 @@
+
+class navBar{
+  
+  1 -- 1 panicButton;
+}
+
+class navButton{
+  
+  Text;
+  locationOfPage;
+* -- 1 navBar;
+}
+
+class panicButton{
+  
+  isA navButton;
+}

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="NavBarMobile.svg"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 158.75 238.12502"
+   height="900"
+   width="600">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="81"
+     inkscape:window-x="0"
+     inkscape:window-height="974"
+     inkscape:window-width="1261"
+     showguides="false"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="560"
+     inkscape:cx="400"
+     inkscape:zoom="0.35"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <rect
+       ry="3.3503923"
+       y="2.8786311"
+       x="1.7881429"
+       height="29.599819"
+       width="156.24532"
+       id="rect833"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264999" />
+    <text
+       id="text837"
+       y="19.210691"
+       x="13.86045"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583"
+         y="19.210691"
+         x="13.86045"
+         id="tspan835"
+         sodipodi:role="line">Logo</tspan></text>
+    <rect
+       ry="3.3503923"
+       y="5.9888139"
+       x="124.72079"
+       height="26.489635"
+       width="33.312668"
+       id="rect839"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264999" />
+    <text
+       transform="scale(0.69200862,1.4450687)"
+       id="text843"
+       y="17.079304"
+       x="269.4617"
+       style="font-style:normal;font-weight:normal;font-size:18.625px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.465627"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.465627"
+         y="17.079304"
+         x="269.4617"
+         id="tspan841"
+         sodipodi:role="line">Dropdown button</tspan></text>
+    <path
+       id="path845"
+       d="m 183.38605,19.102585 c -42.51497,4.575533 -42.33041,3.720726 -42.33041,3.720726"
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <rect
+       ry="3.3503923"
+       y="32.478451"
+       x="1.7881429"
+       height="24.64657"
+       width="155.36763"
+       id="rect847"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264999" />
+    <rect
+       ry="3.3503923"
+       y="57.125023"
+       x="1.7881429"
+       height="30.055748"
+       width="153.92966"
+       id="rect849"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264999" />
+    <rect
+       ry="3.3503923"
+       y="87.180771"
+       x="1.7881429"
+       height="22.909271"
+       width="154.01683"
+       id="rect851"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264999" />
+    <text
+       id="text855"
+       y="48.163105"
+       x="39.107502"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583"
+         y="48.163105"
+         x="39.107502"
+         id="tspan853"
+         sodipodi:role="line">Panic</tspan></text>
+    <text
+       id="text859"
+       y="75.764297"
+       x="32.791325"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583"
+         y="75.764297"
+         x="32.791325"
+         id="tspan857"
+         sodipodi:role="line">Control panel</tspan></text>
+    <text
+       id="text863"
+       y="99.537338"
+       x="25.785501"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.264583"
+         y="99.537338"
+         x="25.785501"
+         id="tspan861"
+         sodipodi:role="line">...</tspan></text>
+    <text
+       transform="scale(0.64142041,1.5590399)"
+       id="text867"
+       y="94.199135"
+       x="7.44453"
+       style="font-style:normal;font-weight:normal;font-size:10.3214px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.258034"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.258034"
+         y="94.199135"
+         x="7.44453"
+         id="tspan865"
+         sodipodi:role="line">Basically a generic bootstrap dropdown</tspan></text>
+  </g>
+</svg>
