@@ -1,10 +1,11 @@
 import React from 'react';
 import{Navbar,Nav} from 'react-bootstrap';
 import Link from 'next/link';
-import NavButton from './navButton';
+import NavButton from './NavButton';
 
 export default class NavBar extends React.Component{
   
+    
     render(){
 
         

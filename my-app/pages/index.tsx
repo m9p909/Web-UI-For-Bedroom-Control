@@ -32,7 +32,3 @@ export default class Home extends React.Component{
     )
   }
 }
-
-export async function getServerSideProps(){
-
-}
