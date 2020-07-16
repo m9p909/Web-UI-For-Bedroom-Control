@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import React from 'react';
-import NavBar from '../Components/navBar/navBar';
 
 export default class Home extends React.Component{
   render(){

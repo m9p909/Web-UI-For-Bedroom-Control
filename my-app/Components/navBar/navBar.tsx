@@ -1,8 +1,13 @@
 import React from 'react';
-import{Navbar,Nav,NavDropdown} from 'react-bootstrap';
+import{Navbar,Nav} from 'react-bootstrap';
 import Link from 'next/link';
+import NavButton from './navButton';
+
 export default class NavBar extends React.Component{
+  
     render(){
+
+        
         return(
           
             <Navbar collapseOnSelect bg="dark" variant="dark">
@@ -10,7 +15,10 @@ export default class NavBar extends React.Component{
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-              <Link href="/ControlPanel"><a className="nav-link">ControlPanel</a></Link>
+                <NavButton href='/ControlPanel' text='Control Panel'/>
+                <NavButton href='/mood' text='Mood'/>
+                <NavButton href='/settings' text='Settings'/>
+
               </Nav>
 
             </Navbar.Collapse>
