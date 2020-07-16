@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<a
+  className="nav-link"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  I like to eat
+</a>
+`;

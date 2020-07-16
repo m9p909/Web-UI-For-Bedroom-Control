@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "noEmit": true,
     "target": "es5",
     "lib": [
       "dom",
@@ -7,16 +8,15 @@
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules"
