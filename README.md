@@ -1,7 +1,7 @@
 # Web-UI-For-Bedroom-Control
 This app will eventually be the main user interface for my raspberry pi bedroom control and monitoring system. 
 
-### Features(some of these may not be added for SEG2105, or just not added altogether):
+### Features(this was mostly brainstorming, hopefully most of these will eventually be implemented)
 - modify RoomMate notification system (Add remove or rearrange members)
 - get temperature of bedroom (arduino temp sensor)
 - Humidity of bedroom
