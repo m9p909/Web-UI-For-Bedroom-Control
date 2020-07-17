@@ -2,7 +2,6 @@
 //methods aren't asynchronous now, but they will be soon
 //TODO: Make music and light State machine
 import isReachable from "is-reachable";
-import { Console } from "console";
 interface data {
   data: string;
 }
