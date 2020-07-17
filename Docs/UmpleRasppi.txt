@@ -1,0 +1,12 @@
+class RaspberryPi{
+
+  IP;
+  Integer Port;
+  
+  function getTemp();
+  function getLight();
+  function getHumidity();
+  function getRoomEmpty();
+  interface mood;
+  function pleyMood();
+}
