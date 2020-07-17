@@ -20,16 +20,6 @@ This app will eventually be the main user interface for my raspberry pi bedroom 
 - test if door is open
 - panic button, available in the menu that does the same thing as the chill button
 
-### UI Requirements v1
-- front page lists the temperature, humidity, light content, is door open
-- motivational quote button should also display a quote in case I'm not in my room
-- is computer on indicator
-- windows or linux indicator
-- fan on or off switch
-- page with mood buttons
-- Light switch
-- Simulation for all these elements, maybe prints to web console
-
 list of tabs:
 - Main(displays temp, humidity, light content, is my room empty, is door open) 
 - mood page (list of moods and buttons that change the mood), 
@@ -37,5 +27,14 @@ list of tabs:
 - Computer info (shows info about my desktop)
 - Control Panel (lights on/off, fan on/off, computer on/off)
 - Motivational quote page
+
+### UI Requirements v1 (for SEG2105 Final
+- front page lists the temperature, humidity, light content, is door open
+- responsive navbar
+- another tab to show that the navbar works
+
+list of tabs:
+- Main(displays temp, humidity, light content, is my room empty, is door open) 
+
 
 

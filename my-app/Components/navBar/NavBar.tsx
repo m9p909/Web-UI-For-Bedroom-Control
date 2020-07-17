@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import Link from "next/link";
 import NavButton from "./NavButton";
-
+//partially copied from the bootstrap React examples: https://react-bootstrap.netlify.app/components/navbar/#navbars
 export default class NavBar extends React.Component {
   render(): JSX.Element {
     return (
@@ -14,8 +14,6 @@ export default class NavBar extends React.Component {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <NavButton href="/ControlPanel" text="Control Panel" />
-            <NavButton href="/mood" text="Mood" />
-            <NavButton href="/settings" text="Settings" />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

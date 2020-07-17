@@ -15,7 +15,9 @@ interface HomeProps {
   roomEmpty: boolean;
 }
 //makes new raspPi
-const pi = new RaspberryPi("IpAddress", 1234);
+const PI_IP_ADDRESS = "http://localhost";
+const PI_PORT = 808;
+const pi = new RaspberryPi(PI_IP_ADDRESS, PI_PORT);
 //Just renders the Index
 export default class RunIndex extends React.Component<HomeProps> {
   render(): JSX.Element {
@@ -53,10 +55,10 @@ export default class RunIndex extends React.Component<HomeProps> {
 //Data gathering is done serverside for security
 //function gets props from raspberry pi and sends them on each request of the page
 export const getServerSideProps = async () => {
-  const temp = pi.getTemp();
-  const light = pi.getLight();
-  const humidity = pi.getHumidity();
-  const roomEmpty = pi.getRoomEmpty();
+  const temp = await pi.getTemp();
+  const light = await pi.getLight();
+  const humidity = await pi.getHumidity();
+  const roomEmpty = await pi.doorOpen();
 
   return {
     props: {

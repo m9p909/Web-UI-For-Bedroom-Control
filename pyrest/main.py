@@ -5,19 +5,34 @@ sensor = Sensors()
 
 @app.route("/temp")
 def getTemp():
-    return str(sensor.getTemp())
+    item = {
+        "temp": sensor.getTemp()
+    }
+    return item
 
 @app.route("/door")
 def doorOpen():
-    return str(sensor.doorIsOpen())
+    item = {
+        "doorIsOpen": sensor.doorIsOpen()
+    }
+    return item
+
 
 @app.route("/brightness")
 def getBrightness():
-    return str(sensor.getBrightness())
+    item = {
+        "brightness": sensor.getBrightness()
+    }
+    return item
+
 
 @app.route("/humidity")
 def getHumidity():
-    return str(sensor.getHumidity())
+    item = {
+        "humidity": sensor.getHumidity()
+    }
+    return item
+
 
 if(__name__ == '__main__'):
     app.run(port=808)

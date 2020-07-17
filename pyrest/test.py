@@ -47,10 +47,10 @@ class TestSensors(unittest.TestCase):
 class testMain(unittest.TestCase):
 
     def test_run(self):
-        self.assertEqual(isinstance(getTemp(),str),True)
-        self.assertEqual(isinstance(getHumidity(),str),True)
-        self.assertEqual(isinstance(doorOpen(),str),True)
-        self.assertEqual(isinstance(getBrightness(),str),True)
+        self.assertEqual(isinstance(getTemp(),dict),True)
+        self.assertEqual(isinstance(getHumidity(),dict),True)
+        self.assertEqual(isinstance(doorOpen(),dict),True)
+        self.assertEqual(isinstance(getBrightness(),dict),True)
 
 if __name__ == '__main__':
     unittest.main()
