@@ -19,10 +19,12 @@
     "react": "16.13.1",
     "react-bootstrap": "^1.2.2",
     "react-dom": "16.13.1",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "react-testing-library": "^8.0.1"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
+    "@testing-library/react": "^10.4.7",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.4",

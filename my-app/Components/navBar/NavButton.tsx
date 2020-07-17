@@ -12,7 +12,9 @@ export default class NavButton extends React.Component<
 > {
   render(): JSX.Element {
     if (!this.props.href) {
+
       throw new Error("Unexpected error: missing link");
+
     }
     return (
       <Link href={this.props.href}>
