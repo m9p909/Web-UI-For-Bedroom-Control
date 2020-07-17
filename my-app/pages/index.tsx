@@ -14,16 +14,18 @@ interface HomeProps {
   humidity: number;
   roomEmpty: boolean;
 }
+//makes new raspPi
 const pi = new RaspberryPi("IpAddress", 1234);
+//Just renders the Index
 export default class RunIndex extends React.Component<HomeProps> {
   render(): JSX.Element {
     const yes = "/green.png";
     const no = "/red.jpeg";
     let emptyRoom = "";
     if (this.props.roomEmpty) {
-      emptyRoom = yes;
+      emptyRoom = "yes";
     } else {
-      emptyRoom = no;
+      emptyRoom = "no";
     }
     return (
       <div className="container">
@@ -40,10 +42,7 @@ export default class RunIndex extends React.Component<HomeProps> {
             </Row>
             <Row>
               <Col>Humidity:{this.props.humidity} </Col>
-              <Col>
-                Empty Room:
-                <Image src={emptyRoom} roundedCircle></Image>
-              </Col>
+              <Col>Empty Room:{emptyRoom}</Col>
             </Row>
           </Container>
         </main>
@@ -51,7 +50,8 @@ export default class RunIndex extends React.Component<HomeProps> {
     );
   }
 }
-
+//Data gathering is done serverside for security
+//function gets props from raspberry pi and sends them on each request of the page
 export const getServerSideProps = async () => {
   const temp = pi.getTemp();
   const light = pi.getLight();
