@@ -1,3 +1,4 @@
+//Author: Jack Clarke
 import Head from "next/head";
 import React, { Props } from "react";
 import Container from "react-bootstrap/Container";

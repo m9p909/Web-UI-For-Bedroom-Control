@@ -1,3 +1,4 @@
+#Author: Jack Clarke
 import threading, random
 import time
 debug = False

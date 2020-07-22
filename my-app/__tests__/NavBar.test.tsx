@@ -1,3 +1,4 @@
+//Author: Jack Clarke
 import React from "react";
 import NavButton from "../Components/navBar/NavButton";
 import renderer from "react-test-renderer";

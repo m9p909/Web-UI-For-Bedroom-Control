@@ -1,3 +1,4 @@
+//Author: Jack Clarke
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import Link from "next/link";

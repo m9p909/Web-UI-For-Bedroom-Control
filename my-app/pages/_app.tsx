@@ -1,3 +1,4 @@
+//Author: Jack Clarke
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "../Components/navBar/NavBar";
 import { AppProps } from "next/app";
