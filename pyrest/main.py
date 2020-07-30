@@ -32,7 +32,16 @@ def getHumidity():
         "humidity": sensor.getHumidity()
     }
     return item
-
+@app.route("/platform")
+def getPlatform():
+    if(Sensors.isRaspberryPi):
+            item = {
+        "platform": "pi"
+    } 
+    else:
+        item = {
+        "platform": "other"
+    } 
 
 if(__name__ == '__main__'):
     app.run(port=808)

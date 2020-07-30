@@ -1,5 +1,7 @@
 import threading, random
 import time
+from sys import platform
+import os
 debug = False
 class Sensors:
 
@@ -12,6 +14,11 @@ class Sensors:
         self.__humidity = 0
         self.__startSensorThread()
         self.arduinoConnect = False 
+        self.isRaspberryPi = False
+        if platform == 'linux': #checks if running on raspberry pi
+            if os.uname.version.contains("raspbian"):
+                self.isRaspberryPi = True
+ 
 
 
     # public Getters
@@ -24,6 +31,7 @@ class Sensors:
         return self.__brightness
     def getHumidity(self):
         return self.__humidity
+    
 
     #Threading Setup
 
@@ -71,18 +79,29 @@ class Sensors:
     #Sensor Getters
 
     #Gets temperature from sensors, not implemented yet, returns dummy values for higher level testing
-    #what these function do will depend on if an arduion is used or not
+    #what these function do will depend on if the rasppi is connected to sensors
     def __updateTemp(self):
-        self.__temp = random.randint(20, 30)
+        if(self.isRaspberryPi):
+            print("updating temp")
+        else:
+            self.__temp = random.randint(20, 30)
     
     def __updateDoor(self):
-        if random.randint(1,5) >=3 :
-            self.__door = True
+        if(self.isRaspberryPi):
+            print("updating door")
         else:
-            self.__door = False
-    def __updateBrightness(self):
-        self.__brightness = random.randint(200,800)
+            self.__door = random.randint(1,5) >=3
 
+    def __updateBrightness(self):
+        if(self.isRaspberryPi):
+            print("updating brightness")
+        else:
+            self.__brightness = random.randint(200,800)
+        
     def __updateHumidity(self):
-        self.__humidity = random.randint(1,100)
+        if(self.isRaspberryPi):
+            print("updating humidity")
+        else:
+             self.__humidity = random.randint(1,100)
+       
     
