@@ -15,8 +15,8 @@ class Sensors:
         self.__startSensorThread()
         self.arduinoConnect = False 
         self.isRaspberryPi = False
-        if platform == 'linux': #checks if running on raspberry pi
-            if os.uname.version.contains("raspbian"):
+        if platform == 'linux': #checks if running an arm linux computer (Like rasppi), a better verification is needed
+            if "arm" in os.uname().machine:
                 self.isRaspberryPi = True
  
 
