@@ -12,12 +12,14 @@ class Sensors:
         self.__sensorThread = threading.Thread
         self.__brightness = 0
         self.__humidity = 0
-        self.__startSensorThread()
-        self.arduinoConnect = False 
         self.isRaspberryPi = False
         if platform == 'linux': #checks if running an arm linux computer (Like rasppi), a better verification is needed
             if "arm" in os.uname().machine:
                 self.isRaspberryPi = True
+        self.__startSensorThread()
+        self.arduinoConnect = False 
+        
+
  
 
 
