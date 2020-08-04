@@ -5,7 +5,7 @@ import os
 server = "192.168.0.188"
 port = "22"
 user = "pi"
-password = "***REMOVED***" #make sure this is blank before committing
+password = "" #make sure this is blank before committing
 os.chdir('..')
 def createSSHClient(server, port, user, password):
     client = paramiko.SSHClient()
