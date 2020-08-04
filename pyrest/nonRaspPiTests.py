@@ -43,6 +43,12 @@ class TestSensors(unittest.TestCase):
         self.assertEqual(isinstance(sensor.doorIsOpen(),bool),True)
         sensor.stop()
         self.assertEqual(sensor.isRunning(),False)
+    
+    def test_isRaspPi(self):
+        sensor = Sensors()
+        self.assertEqual(sensor.isRaspberryPi,False)
+        sensor.stop()
+        self.assertEqual(sensor.isRunning(),False)
 
 class testMain(unittest.TestCase):
 

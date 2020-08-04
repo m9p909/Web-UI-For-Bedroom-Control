@@ -84,25 +84,29 @@ class Sensors:
     #what these function do will depend on if the rasppi is connected to sensors
     def __updateTemp(self):
         if(self.isRaspberryPi):
-            print("updating temp")
+            #print("updating temp")
+            self.__temp += 1
         else:
             self.__temp = random.randint(20, 30)
     
     def __updateDoor(self):
         if(self.isRaspberryPi):
-            print("updating door")
+            #print("updating door")
+            self.__door = True
         else:
             self.__door = random.randint(1,5) >=3
 
     def __updateBrightness(self):
         if(self.isRaspberryPi):
-            print("updating brightness")
+            #print("updating brightness")
+            self.__brightness += 1
         else:
             self.__brightness = random.randint(200,800)
         
     def __updateHumidity(self):
         if(self.isRaspberryPi):
-            print("updating humidity")
+            #print("updating humidity")
+            self.__humidity += 1
         else:
              self.__humidity = random.randint(1,100)
        
