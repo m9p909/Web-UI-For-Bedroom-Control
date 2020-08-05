@@ -1,3 +1,4 @@
+//Author: Jack Clarke
 import React from "react";
 import Link from "next/link";
 interface navButtonProps {

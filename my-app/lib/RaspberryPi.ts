@@ -1,3 +1,4 @@
+//Author: Jack Clarke
 //class that would get information from the raspberry pi
 //methods aren't asynchronous now, but they will be soon
 //TODO: Make music and light State machine

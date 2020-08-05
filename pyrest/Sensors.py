@@ -1,3 +1,4 @@
+#Author: Jack Clarke
 import threading, random
 import time
 from sys import platform

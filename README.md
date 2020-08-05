@@ -1,40 +1,18 @@
 # Web-UI-For-Bedroom-Control
 This app will eventually be the main user interface for my raspberry pi bedroom control and monitoring system. 
 
-### Features(some of these may not be added for SEG2105, or just not added altogether):
-- modify RoomMate notification system (Add remove or rearrange members)
-- get temperature of bedroom (arduino temp sensor)
-- Humidity of bedroom
-- Is computer on?
-- Is computer booted to windows or linux? (useful to know if I can use Teamviewer to access my computer)
-- button that has the rasp pi play a motivational quote
-- history of people that walked in or out the door and their height (arduino ultrasonic sensor tests the height of everyone that walks in)
-- play spotify on rasp pi
-- Fan on or off switch
-- Light switch
-- jazz button, dims the lights and plays jazz (Chill button)
-- party button, makes rainbow lights and plays electro music
-- maybe other mood buttons, sad, angry, happy etc. 
-- somehow integrating https://mycroft.ai/, this one is a little iffy
-- light content in room(photoresistor, or something else depending on whats available)
-- test if door is open
-- panic button, available in the menu that does the same thing as the chill button
 
-list of tabs:
-- Main(displays temp, humidity, light content, is my room empty, is door open) 
-- mood page (list of moods and buttons that change the mood), 
-- settings(door history such as people that walked in or out the door, reset button, disable/enable tracking(for privacy), )
-- Computer info (shows info about my desktop)
-- Control Panel (lights on/off, fan on/off, computer on/off)
-- Motivational quote page
+install and run instructions:
 
-### UI Requirements v1 (for SEG2105 Final
-- front page lists the temperature, humidity, light content, is door open
-- responsive navbar
-- another tab to show that the navbar works
-
-list of tabs:
-- Main(displays temp, humidity, light content, is my room empty, is door open) 
+1. Install flask 'pip install flask
+2. run main.py
+* its very important that the python server is started first since the webpage does not error handle very well(yet)
+3. npm install in the my-app folder
+4. if build was successful: npm run start otherwise npm run dev or npm run build
 
 
+
+Python Module: will need to install flask using 'pip install flask'. Then just run the main.py and the raspberry pi server is up and running. There is a venv in the repo, however it most likely won't work with your computer. You might need to delete this folder and make a new venv. 
+
+NodeJS/nextJS module: The command to install the folder is 'npm install'. Next you can run the dev server by typing 'npm run dev' or start the build server by typing 'npm run start'
 

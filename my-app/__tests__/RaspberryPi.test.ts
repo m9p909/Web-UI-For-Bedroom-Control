@@ -1,3 +1,4 @@
+//Author: Jack Clarke
 import RaspberryPi from "../lib/RaspberryPi";
 const PI_IP_ADDRESS = "http://localhost";
 const PI_PORT = 808;
