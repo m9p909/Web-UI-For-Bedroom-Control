@@ -2,6 +2,12 @@ import threading, random
 import time
 from sys import platform
 import os
+import time
+if platform == 'linux': #checks if running an arm linux computer (Like rasppi), a better verification is needed
+            if "arm" in os.uname().machine:
+                import board
+                import adafruit_dht
+
 debug = False
 class Sensors:
 
@@ -16,8 +22,11 @@ class Sensors:
         if platform == 'linux': #checks if running an arm linux computer (Like rasppi), a better verification is needed
             if "arm" in os.uname().machine:
                 self.isRaspberryPi = True
+                self.__thermometer = adafruit_dht.DHT11(board.D4)
         self.__startSensorThread()
         self.arduinoConnect = False 
+        
+        
         
 
  
@@ -52,7 +61,7 @@ class Sensors:
             self.__updateDoor()
             self.__updateBrightness()
             self.__updateHumidity()
-            time.sleep(0.1) #really only needs to be around 1 second, but testing is much faster this way
+            time.sleep(2.0) #really only needs to be around 1 second, but testing is much faster this way
     
     #public Threading commands
     
@@ -85,7 +94,11 @@ class Sensors:
     def __updateTemp(self):
         if(self.isRaspberryPi):
             #print("updating temp")
-            self.__temp += 1
+            try:
+                #print("getting temp")
+                self.__temp = self.__thermometer.temperature
+            except RuntimeError as error:
+                pass
         else:
             self.__temp = random.randint(20, 30)
     
@@ -98,15 +111,14 @@ class Sensors:
 
     def __updateBrightness(self):
         if(self.isRaspberryPi):
-            #print("updating brightness")
-            self.__brightness += 1
+            self.__brightness += 100
         else:
             self.__brightness = random.randint(200,800)
         
     def __updateHumidity(self):
         if(self.isRaspberryPi):
             #print("updating humidity")
-            self.__humidity += 1
+            self.__humidity = self.__thermometer.humidity
         else:
              self.__humidity = random.randint(1,100)
        

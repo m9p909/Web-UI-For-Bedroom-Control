@@ -2,10 +2,10 @@
 import paramiko
 from scp import SCPClient
 import os
-server = "192.168.0.188"
+server = "192.168.0.175"
 port = "22"
 user = "pi"
-password = "" #make sure this is blank before committing
+password = "***REMOVED***" #make sure this is blank before committing
 os.chdir('..')
 def createSSHClient(server, port, user, password):
     client = paramiko.SSHClient()
