@@ -1,6 +1,14 @@
 #Author: Jack Clarke
 import threading, random
 import time
+from sys import platform
+import os
+import time
+if platform == 'linux': #checks if running an arm linux computer (Like rasppi), a better verification is needed
+            if "arm" in os.uname().machine:
+                import board
+                import adafruit_dht
+
 debug = False
 class Sensors:
 
@@ -11,8 +19,18 @@ class Sensors:
         self.__sensorThread = threading.Thread
         self.__brightness = 0
         self.__humidity = 0
+        self.isRaspberryPi = False
+        if platform == 'linux': #checks if running an arm linux computer (Like rasppi), a better verification is needed
+            if "arm" in os.uname().machine:
+                self.isRaspberryPi = True
+                self.__thermometer = adafruit_dht.DHT11(board.D4)
         self.__startSensorThread()
         self.arduinoConnect = False 
+        
+        
+        
+
+ 
 
 
     # public Getters
@@ -25,6 +43,7 @@ class Sensors:
         return self.__brightness
     def getHumidity(self):
         return self.__humidity
+    
 
     #Threading Setup
 
@@ -43,7 +62,7 @@ class Sensors:
             self.__updateDoor()
             self.__updateBrightness()
             self.__updateHumidity()
-            time.sleep(0.1) #really only needs to be around 1 second, but testing is much faster this way
+            time.sleep(2.0) #really only needs to be around 1 second, but testing is much faster this way
     
     #public Threading commands
     
@@ -72,18 +91,36 @@ class Sensors:
     #Sensor Getters
 
     #Gets temperature from sensors, not implemented yet, returns dummy values for higher level testing
-    #what these function do will depend on if an arduion is used or not
+    #what these function do will depend on if the rasppi is connected to sensors
     def __updateTemp(self):
-        self.__temp = random.randint(20, 30)
+        if(self.isRaspberryPi):
+            #print("updating temp")
+            try:
+                #print("getting temp")
+                self.__temp = self.__thermometer.temperature
+            except RuntimeError as error:
+                pass
+        else:
+            self.__temp = random.randint(20, 30)
     
     def __updateDoor(self):
-        if random.randint(1,5) >=3 :
+        if(self.isRaspberryPi):
+            #print("updating door")
             self.__door = True
         else:
-            self.__door = False
-    def __updateBrightness(self):
-        self.__brightness = random.randint(200,800)
+            self.__door = random.randint(1,5) >=3
 
+    def __updateBrightness(self):
+        if(self.isRaspberryPi):
+            self.__brightness += 100
+        else:
+            self.__brightness = random.randint(200,800)
+        
     def __updateHumidity(self):
-        self.__humidity = random.randint(1,100)
+        if(self.isRaspberryPi):
+            #print("updating humidity")
+            self.__humidity = self.__thermometer.humidity
+        else:
+             self.__humidity = random.randint(1,100)
+       
     
