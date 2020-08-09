@@ -1,3 +1,4 @@
+//Author: Jack Clarke
 //class that would get information from the raspberry pi
 //methods aren't asynchronous now, but they will be soon
 //TODO: Make music and light State machine
@@ -25,34 +26,47 @@ export default class RaspberryPi {
     return this.port;
   }
 
-  async isUp(): Promise<boolean> {
-    return await isReachable(this.url);
+  isUp(): boolean {
+    let piisup: boolean;
+    try {
+      const response = fetch(this.url + "/temp");
+      piisup = true;
+      return true;
+    } catch (e) {
+      piisup = false;
+      return false;
+    }
   }
   //gets room temp
   async getTemp(): Promise<number> {
-    const response = await fetch(this.url + "/temp");
-
-    const myJson = await response.json();
-    const temp = <number>myJson.temp;
+    const myJson = await this.getData("/temp");
+    const temp = <number>myJson.data;
     return temp;
   }
   async getLight(): Promise<number> {
-    const response = await fetch(this.url + "/brightness");
-    const myJson = await response.json();
-    const temp = <number>myJson.brightness;
+    const myJson = await this.getData("/brightness");
+    const temp = <number>myJson.data;
     return temp;
   }
   async getHumidity(): Promise<number> {
-    const response = await fetch(this.url + "/humidity");
-    const myJson = await response.json();
-    const temp = <number>myJson.humidity;
+    const myJson = await this.getData("/humidity");
+    const temp = <number>myJson.data;
     return temp;
   }
   async doorOpen(): Promise<boolean> {
-    const response = await fetch(this.url + "/door");
-    const myJson = await response.json();
-    const temp = <boolean>myJson.doorIsOpen;
+    const myJson = await this.getData("/door");
+    const temp = <boolean>myJson.data;
     return temp;
+  }
+  // Receives data from a route in the rasppi server, and returns it as json. Returns an error if something goes wrong
+  async getData(route: string): Promise<Record<string, unknown>> {
+    try {
+      const response = await fetch(this.url + route);
+      const myJson: Record<string, unknown> = await response.json();
+      return myJson;
+    } catch (e) {
+      return { data: "ServerError" };
+    }
   }
 }
 

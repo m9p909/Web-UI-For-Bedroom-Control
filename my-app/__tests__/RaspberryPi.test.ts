@@ -1,4 +1,5 @@
 import RaspberryPi from "../lib/RaspberryPi";
+
 const PI_IP_ADDRESS = "http://localhost";
 const PI_PORT = 808;
 test("set and get port", () => {
@@ -10,10 +11,19 @@ test("set and get port", () => {
 
 test("make sure calls are defined", () => {
   const pi = new RaspberryPi(PI_IP_ADDRESS, PI_PORT);
-  if (pi.isUp()) {
-    expect(pi.getHumidity()).toBeDefined();
-    expect(pi.getLight()).toBeDefined();
-    expect(pi.getTemp()).toBeDefined();
-    expect(pi.doorOpen()).toBeDefined();
+  //test pi is up
+  let piisup;
+  try {
+    fetch(this.url + "/temp");
+    piisup = true;
+  } catch (e) {
+    piisup = false;
+    console.log(e);
   }
+  expect(pi.isUp()).toEqual(true);
+
+  expect(pi.getHumidity()).toBeDefined();
+  expect(pi.getLight()).toBeDefined();
+  expect(pi.getTemp()).toBeDefined();
+  expect(pi.doorOpen()).toBeDefined();
 });

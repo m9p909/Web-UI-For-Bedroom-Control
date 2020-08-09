@@ -6,14 +6,14 @@ sensor = Sensors()
 @app.route("/temp")
 def getTemp():
     item = {
-        "temp": sensor.getTemp()
+        "data": sensor.getTemp()
     }
     return item
 
 @app.route("/door")
 def doorOpen():
     item = {
-        "doorIsOpen": sensor.doorIsOpen()
+        "data": sensor.doorIsOpen()
     }
     return item
 
@@ -21,7 +21,7 @@ def doorOpen():
 @app.route("/brightness")
 def getBrightness():
     item = {
-        "brightness": sensor.getBrightness()
+        "data": sensor.getBrightness()
     }
     return item
 
@@ -29,7 +29,7 @@ def getBrightness():
 @app.route("/humidity")
 def getHumidity():
     item = {
-        "humidity": sensor.getHumidity()
+        "data": sensor.getHumidity()
     }
     return item
 
