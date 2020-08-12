@@ -33,6 +33,14 @@ def getHumidity():
     }
     return item
 
+@app.route("/all")
+def getAllSensorData():
+    item={
+        "data": sensor.getAllSensorData()
+        
+
+    }
+    return item
 
 if(__name__ == '__main__'):
     app.run(port=808)

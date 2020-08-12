@@ -15,7 +15,8 @@ export default class RaspberryPi {
     this.ip = ip;
     this.port = port;
     this.musicPlaying = false; //not implemented yet
-    this.url = ip + ":" + port;
+    this.url = "http://"+ip + ":" + port;
+    
   }
 
   setPort(newPort: number): boolean {
@@ -60,7 +61,8 @@ export default class RaspberryPi {
   }
   
   async getAllSensorData(): Promise<Record<string, unknown>> {
-    return await this.getData("/all");
+    let myJson = this.getData("/all")
+    return myJson;
   }
   // Receives data from a route in the rasppi server, and returns it as json. Returns an error if something goes wrong
   async getData(route: string): Promise<Record<string, unknown>> {
@@ -69,7 +71,8 @@ export default class RaspberryPi {
       const myJson: Record<string, unknown> = await response.json();
       return myJson;
     } catch (e) {
-      return { data: "ServerError" };
+      console.log(e);
+      return { data: "ServerError, is your server up?"};
     }
   }
 }

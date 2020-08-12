@@ -12,7 +12,7 @@ interface HomeProps {
   temp: number;
   light: number;
   humidity: number;
-  roomEmpty: boolean;
+  door: boolean;
 }
 //makes new raspPi
 const PI_IP_ADDRESS = process.env.piIpAddress;
@@ -23,11 +23,11 @@ export default class RunIndex extends React.Component<HomeProps> {
   render(): JSX.Element {
     const yes = "/green.png";
     const no = "/red.jpeg";
-    let emptyRoom = "";
-    if (this.props.roomEmpty) {
-      emptyRoom = "yes";
+    let doorIsOpen = "";
+    if (this.props.door) {
+      doorIsOpen = "yes";
     } else {
-      emptyRoom = "no";
+      doorIsOpen = "no";
     }
     return (
       <div className="container">
@@ -44,7 +44,7 @@ export default class RunIndex extends React.Component<HomeProps> {
             </Row>
             <Row>
               <Col>Humidity:{this.props.humidity} </Col>
-              <Col>Empty Room:{emptyRoom}</Col>
+              <Col>Is the door Open? :{doorIsOpen}</Col>
             </Row>
           </Container>
         </main>
@@ -58,14 +58,15 @@ export const getServerSideProps = async () => {
   const temp = await pi.getTemp();
   const light = await pi.getLight();
   const humidity = await pi.getHumidity();
-  const roomEmpty = await pi.doorOpen();
+  const door = await pi.doorOpen();
+  
 
   return {
     props: {
       temp,
       light,
       humidity,
-      roomEmpty,
+      door,
     },
   };
 };

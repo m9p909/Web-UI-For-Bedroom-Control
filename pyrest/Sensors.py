@@ -24,6 +24,14 @@ class Sensors:
         return self.__brightness
     def getHumidity(self):
         return self.__humidity
+    
+    def getAllSensorData(self):
+        return {
+            "temp": self.__temp,
+            "door": self.__door,
+            "brightness": self.__brightness,
+            "humidity": self.__humidity
+        }
 
     #Threading Setup
 
