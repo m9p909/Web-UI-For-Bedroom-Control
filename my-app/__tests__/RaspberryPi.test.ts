@@ -20,7 +20,7 @@ test("make sure calls are defined", () => {
     piisup = false;
     console.log(e);
   }
-  expect(pi.isUp()).toEqual(true);
+  expect(pi.isUp()).toEqual(true);// needs to be set manually
 
   expect(pi.getHumidity()).toBeDefined();
   expect(pi.getLight()).toBeDefined();

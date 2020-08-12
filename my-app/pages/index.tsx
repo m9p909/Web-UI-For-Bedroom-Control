@@ -15,8 +15,8 @@ interface HomeProps {
   roomEmpty: boolean;
 }
 //makes new raspPi
-const PI_IP_ADDRESS = "http://localhost";
-const PI_PORT = 808;
+const PI_IP_ADDRESS = process.env.piIpAddress;
+const PI_PORT =  process.env.piServerPort as unknown as number;
 const pi = new RaspberryPi(PI_IP_ADDRESS, PI_PORT);
 //Just renders the Index
 export default class RunIndex extends React.Component<HomeProps> {

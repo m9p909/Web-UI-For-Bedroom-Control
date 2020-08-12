@@ -58,6 +58,10 @@ export default class RaspberryPi {
     const temp = <boolean>myJson.data;
     return temp;
   }
+  
+  async getAllSensorData(): Promise<Record<string, unknown>> {
+    return await this.getData("/all");
+  }
   // Receives data from a route in the rasppi server, and returns it as json. Returns an error if something goes wrong
   async getData(route: string): Promise<Record<string, unknown>> {
     try {
