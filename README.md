@@ -1,5 +1,5 @@
 # Web-UI-For-Bedroom-Control
-This app will eventually be the main user interface for my raspberry pi bedroom control and monitoring system. 
+This app will eventually be the main user interface for my raspberry pi bedroom control and monitoring system. Lots of extra information is available in the [Wiki](https://github.com/JackClarkeUottawa/Web-UI-For-Bedroom-Control/wiki)
 
 
 install and run instructions:
@@ -15,4 +15,5 @@ install and run instructions:
 Python Module: will need to install flask using 'pip install flask'. Then just run the main.py and the raspberry pi server is up and running. There is a venv in the repo, however it most likely won't work with your computer. You might need to delete this folder and make a new venv. 
 
 NodeJS/nextJS module: The command to install the folder is 'npm install'. Next you can run the dev server by typing 'npm run dev' or start the build server by typing 'npm run start'
+
 
