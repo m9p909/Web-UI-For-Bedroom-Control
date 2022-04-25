@@ -2,12 +2,12 @@
 import unittest
 from Sensors import Sensors
 from main import *
-import time
 class TestSensors(unittest.TestCase):
-
+    
     def test_init(self):
         sensor = Sensors()
-        sensor.stop()
+
+
 
     def test_start(self):
         sensor = Sensors()
@@ -50,6 +50,7 @@ class TestSensors(unittest.TestCase):
         self.assertEqual(sensor.isRaspberryPi,False)
         sensor.stop()
         self.assertEqual(sensor.isRunning(),False)
+    
 
 class testMain(unittest.TestCase):
 

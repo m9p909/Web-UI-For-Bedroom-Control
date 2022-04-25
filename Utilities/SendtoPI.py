@@ -1,12 +1,13 @@
+#!/usr/bin/env python3
+
 #This utility sends the pyrest folder to a rasppi using scp
 import paramiko
 from scp import SCPClient
 import os
-server = "192.168.0.175"
-port = "22"
-user = "pi"
-password = "" #make sure this is blank before committing
-os.chdir('..')
+import typer
+
+app = typer.Typer()
+
 def createSSHClient(server, port, user, password):
     client = paramiko.SSHClient()
     client.load_system_host_keys()
@@ -14,8 +15,21 @@ def createSSHClient(server, port, user, password):
     client.connect(server, port, user, password)
     return client
 
-ssh = createSSHClient(server, port, user, password)
-scp = SCPClient(ssh.get_transport())
+@app.command()
+def sendToPi(server: str = "192.168.7.75"):
+    port = "22"
+    user = "pi"
+    remote_path = "/home/pi/projects/"
+    os.chdir('..')
+    password = typer.prompt("pi password: ")
+    ssh = createSSHClient(server, port, user, password)
+    transport = ssh.get_transport()
+    ssh.exec_command("rm -r "+remote_path)
+    if transport:
+        scp = SCPClient(transport)
+        scp.put("./pyrest",remote_path=remote_path ,recursive = True)
+    else:
+        print("ssh was null, connection failed")
 
-
-scp.put("./pyrest",remote_path = "/home/pi/projects/",recursive = True)
+if __name__ =="__main__":
+    app()

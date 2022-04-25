@@ -5,11 +5,12 @@ import time
 class TestSensors(unittest.TestCase):
     
 
-    def setUpClass():
+    @classmethod
+    def setUpClass(cls):
         sensor = Sensors()
         time.sleep(2)
-
-    def tearDown(self):
+    @classmethod
+    def tearDown(cls):
         time.sleep(1)
 
     def test_start(self):

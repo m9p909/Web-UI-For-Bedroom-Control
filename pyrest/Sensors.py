@@ -1,28 +1,31 @@
 #Author: Jack Clarke
 import threading, random
 import time
-from sys import platform
-import os
 import time
-if platform == 'linux': #checks if running an arm linux computer (Like rasppi), a better verification is needed
-            if "arm" in os.uname().machine:
-                import board
-                import adafruit_dht
+from SystemService import SystemService
+if SystemService().is_raspi():
+    import board
+    import adafruit_dht
 
 debug = False
+
+
+
+class SensorThread(threading.Thread):
+    do_run = True
+    
+
 class Sensors:
 
+    isRaspberryPi = False
     
     def __init__(self):
         self.__temp = 0
         self.__door = False
-        self.__sensorThread = threading.Thread
         self.__brightness = 0
         self.__humidity = 0
-        self.isRaspberryPi = False
-        if platform == 'linux': #checks if running an arm linux computer (Like rasppi), a better verification is needed
-            if "arm" in os.uname().machine:
-                self.isRaspberryPi = True
+        self.isRaspberryPi = SystemService().is_raspi()
+        if self.isRaspberryPi:
                 self.__thermometer = adafruit_dht.DHT11(board.D4)
         self.__startSensorThread()
         self.arduinoConnect = False 
@@ -48,13 +51,13 @@ class Sensors:
     #Threading Setup
 
     def __startSensorThread(self):
-        self.__sensorThread = threading.Thread(target=self.__sensorLoop)
+        self.__sensorThread = SensorThread(target=self.__sensorLoop)
         self.__sensorThread.start()
         if debug:
             print("sensors Started")
 
     def __sensorLoop(self):
-        t = threading.currentThread()
+        t = threading.current_thread()
         while getattr(t, "do_run", True):
             if debug:
                 print("updating")
@@ -123,4 +126,6 @@ class Sensors:
         else:
              self.__humidity = random.randint(1,100)
        
+    def __del__(self):
+        self.stop()
     
