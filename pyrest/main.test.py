@@ -9,9 +9,9 @@ class MainUnittest(unittest.TestCase):
     
     def test_returns_platform_pi(self):
         if(SystemService().is_raspi()):
-            self.assertEquals(main.getPlatform(), {"platform": "pi"})
+            self.assertEqual(main.getPlatform(), {"platform": "pi"})
         else:
-            self.assertEquals(main.getPlatform(),{"platform": "other"} )
+            self.assertEqual(main.getPlatform(),{"platform": "other"} )
 
 
 if __name__ == "__main__":

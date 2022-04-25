@@ -35,7 +35,7 @@ def getHumidity():
     return item
 @app.route("/platform")
 def getPlatform():
-    if(Sensors.isRaspberryPi):
+    if sensor.isRaspberryPi:
             item = {
         "platform": "pi"
     } 

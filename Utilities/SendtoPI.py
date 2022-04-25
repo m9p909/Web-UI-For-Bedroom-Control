@@ -21,7 +21,7 @@ def sendToPi(server: str = "192.168.7.75"):
     user = "pi"
     remote_path = "/home/pi/projects/"
     os.chdir('..')
-    password = typer.prompt("pi password: ")
+    password = typer.prompt("pi password: ", hide_input=True)
     ssh = createSSHClient(server, port, user, password)
     transport = ssh.get_transport()
     ssh.exec_command("rm -r "+remote_path)

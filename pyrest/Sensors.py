@@ -3,7 +3,8 @@ import threading, random
 import time
 import time
 from SystemService import SystemService
-if SystemService().is_raspi():
+is_raspi = SystemService().is_raspi()
+if is_raspi:
     import board
     import adafruit_dht
 
@@ -17,14 +18,14 @@ class SensorThread(threading.Thread):
 
 class Sensors:
 
-    isRaspberryPi = False
+    isRaspberryPi = None
     
     def __init__(self):
         self.__temp = 0
         self.__door = False
         self.__brightness = 0
         self.__humidity = 0
-        self.isRaspberryPi = SystemService().is_raspi()
+        self.isRaspberryPi = is_raspi
         if self.isRaspberryPi:
                 self.__thermometer = adafruit_dht.DHT11(board.D4)
         self.__startSensorThread()
