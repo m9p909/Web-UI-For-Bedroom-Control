@@ -16,18 +16,16 @@ def createSSHClient(server, port, user, password):
     return client
 
 @app.command()
-def sendToPi(server: str = "192.168.7.75"):
+def sendToPi(server: str = "192.168.7.75", remote_path = "/home/pi/projects/", local_path="../pyrest"):
     port = "22"
     user = "pi"
-    remote_path = "/home/pi/projects/"
-    os.chdir('..')
     password = typer.prompt("pi password: ", hide_input=True)
     ssh = createSSHClient(server, port, user, password)
     transport = ssh.get_transport()
     ssh.exec_command("rm -r "+remote_path)
     if transport:
         scp = SCPClient(transport)
-        scp.put("./pyrest",remote_path=remote_path ,recursive = True)
+        scp.put(local_path,remote_path=remote_path ,recursive = True)
     else:
         print("ssh was null, connection failed")
 
